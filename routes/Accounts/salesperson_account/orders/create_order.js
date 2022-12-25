@@ -19,9 +19,9 @@ router.post("/",async(req,res)=>{
 			name_of_product:  			payload.name_of_product,
 			volume_of_items:			payload.volume_of_items,
 			unit_price: 				payload.unit_price,
-			creator_id:					payload._id,
+			creator_id:					payload.creator_id,
 			total: 						payload.total,
-			status: 					"pending",
+			order_status: 					"pending",
 		})
 		
 		return res.status(200).send("successfully created your order")

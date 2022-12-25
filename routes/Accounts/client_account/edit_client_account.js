@@ -23,9 +23,9 @@ router.post('/',async(req,res)=>{
 				first_name: 		payload.first_name,
 				last_name: 			payload.last_name,
 				company_name: 		payload.company_name,
-				mobile_of_company:  payload.mobile,		
-				email_of_company:   payload.email,
-				address: 			payload.address,
+				mobile_of_company:  payload.mobile_of_company,		
+				email_of_company:   payload.email_of_company,
+				address: 			payload.address_of_company,
 				position:           payload.position,	
 				gender:             payload.gender,
 	        }};

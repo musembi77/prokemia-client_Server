@@ -5,7 +5,7 @@ const Client = require("../../../../models/Client/Client.js");
 
 let router = express.Router()
 
-router.get('/',async(req,res)=>{
+router.post('/',async(req,res)=>{
     //get payload
     const payload  = req.body;
     //check if payload exists
@@ -16,7 +16,7 @@ router.get('/',async(req,res)=>{
 
     try{
         const client = await Client.findOne({_id:id});
-        return res.status(200).json(client)
+        return res.status(200).send(client)
     }catch(err){
         console.log(err);
         return res.status(500).send("Error while fetching client")

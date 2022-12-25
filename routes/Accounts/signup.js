@@ -29,7 +29,7 @@ router.post("/",async(req,res)=>{
 			// if (response === -1)
 			// 	return res.status(500).send("could not search through db") //returns a 401 when an account exists	
 			else
-				return res.status(401).send("account already exists") //returns a 401 when an account exists
+				return res.status(201).send("account already exists") //returns a 401 when an account exists
 		})
 	}catch(err){
 		console.log(err)

@@ -7,13 +7,15 @@ const router = express.Router()
 
 router.post("/",async(req,res)=>{
 	const payload = req.body;
-
+	console.log(payload)
 	if (!payload)
 		return res.status(401).send("Bad Request")
 
-	const existing_email = await Mailing_list.find({email:payload.email})
+	const email = payload.email
+	const existing_email = await Mailing_list.find({email:email})
 
-	if (existing_email != null)
+	console.log(existing_email)
+	if (!existing_email)
 		return res.status(400).send("Your email already exists in our list")
 
 	try{

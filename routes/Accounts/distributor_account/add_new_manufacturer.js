@@ -20,7 +20,7 @@ router.post('/',async(req,res)=>{
 	{
 		//create manufacturer object item
 		manufacturer_item = {
-			'name': 	payload.first_name,
+			'name': 	payload.name,
 			'email': 	payload.email,
 			'mobile': 	payload.mobile
 		}

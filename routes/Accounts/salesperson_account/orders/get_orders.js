@@ -15,7 +15,7 @@ router.get("/",async(req,res)=>{
     try{
         const orders = await Order.find();
         const response = (orders?.filter((item)=> item.creator_id?.includes(payload._id)));
-        return res.status(200).json(response)
+        return res.status(200).send(response)
     }catch(err){
         console.log(err);
         return res.status(500).send("could not fetch orders")

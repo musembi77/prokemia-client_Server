@@ -6,8 +6,9 @@ const Mailing_list = require("../../models/Support/Landing_page_mailing_list");
 const router = express.Router()
 
 router.post("/",async(req,res)=>{
-	const payload = req.body;
 
+	const payload = req.body;
+	console.log(payload)
 	if (!payload)
 		return res.send(401).send("Bad Request")
 

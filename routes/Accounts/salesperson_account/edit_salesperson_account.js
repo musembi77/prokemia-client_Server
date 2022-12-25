@@ -14,7 +14,7 @@ router.post('/',async(req,res)=>{
 
 	const id = payload._id //get the salesperson id
 	const existing_salesperson = await Sales.findOne({_id:id})
-
+	console.log(existing_salesperson)
 	if (existing_salesperson != null)
 		try{
 			const query = {_id:id};

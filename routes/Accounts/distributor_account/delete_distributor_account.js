@@ -14,6 +14,7 @@ router.post("/",async (req,res)=>{
     
     try{
         const existing_distributor = await Distributor.findOne({_id:id});
+        console.log(existing_distributor)
         if (!existing_distributor)
         	return res.status(400).send("could not find this account")
 

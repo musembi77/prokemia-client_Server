@@ -5,7 +5,7 @@ const Sales = require('../../../models/Sales/SalesPerson.js');
 
 let router = express.Router()
 
-router.get('/',async (req,res,next)=>{
+router.post('/',async (req,res,next)=>{
     const payload = req.body; //get payload
     
     //check if payload is available

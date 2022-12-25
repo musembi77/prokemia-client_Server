@@ -13,7 +13,7 @@ const router = express.Router();
 
 router.post('/',async(req,res)=>{
 	const payload = req.body; //gets payload
-	//console.log(payload);
+	console.log(payload);
 
 	if (!payload)
 		return res.status(400).send("Bad Request, no payload found")
@@ -31,10 +31,11 @@ router.post('/',async(req,res)=>{
 	
 	if (client_result !== null){
 		//console.log(client_result)
+		const acc_type = 'client'
 		if(bcrypt.compareSync(password, client_result.password)){
 			const id = client_result._id
 			const token = jwt.sign(
-				{email,id},
+				{email,id,acc_type},
 				process.env.TOKEN_CLIENT_KEY,
 				{
 					expiresIn: '2d'
@@ -45,10 +46,11 @@ router.post('/',async(req,res)=>{
 		return res.status(401).send("wrong credentials, try again"); // false value indicates user credentials are wrong
 	}else if (distributor_result !== null){
 		//console.log(distributor_result)
+		const acc_type = 'distributor'
 		if(bcrypt.compareSync(password,distributor_result.password)){
 			const id = distributor_result._id
 			const token = jwt.sign(
-				{email,id},
+				{email,id,acc_type},
 				process.env.TOKEN_DISTRIBUTOR_KEY,
 				{
 					expiresIn: '2d'
@@ -59,10 +61,11 @@ router.post('/',async(req,res)=>{
 		return res.status(401).send("wrong credentials, try again"); // false value indicates user credentials are wrong
 	}else if (manufacturer_result !== null){
 		//console.log(manufacturer_result)
+		const acc_type = 'manufacturer'
 		if(bcrypt.compareSync(password,manufacturer_result.password)){
 			const id = manufacturer_result._id
 			const token = jwt.sign(
-				{email,id},
+				{email,id,acc_type},
 				process.env.TOKEN_MANUFACTURER_KEY,
 				{
 					expiresIn: '2d'
@@ -73,10 +76,11 @@ router.post('/',async(req,res)=>{
 		return res.status(401).send("wrong credentials, try again"); // false value indicates user credentials are wrong
 	}else if (sales_result !== null){
 		//console.log(sales_result)
+		const acc_type = 'sales'
 		if(bcrypt.compareSync(password,sales_result.password)){
 			const id = sales_result._id
 			const token = jwt.sign(
-				{email,id},
+				{email,id,acc_type},
 				process.env.TOKEN_SALES_KEY,
 				{
 					expiresIn: '2d'

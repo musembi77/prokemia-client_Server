@@ -19,7 +19,7 @@ const Client_User=async(payload)=>{
     const salt = bcrypt.genSaltSync(10);
     const encrypted_password = bcrypt.hashSync(payload.password, salt);
     const email = payload.email_of_company
-
+    const acc_type = 'client'
     try{
         const token = jwt.sign(
             {email},
@@ -38,7 +38,7 @@ const Client_User=async(payload)=>{
 			company_name:       "",	
 			position:           "",	
 			gender:             "",		
-			mobile_of_company:  payload.mobile_of_company,		
+			mobile_of_company:  "",		
 			email_of_company:   payload.email_of_company,
             listing_status:     false,	
 			recents:            [],
@@ -48,7 +48,7 @@ const Client_User=async(payload)=>{
         //on success email/sms the client to verify account
         return new_Client //return new user 
     }catch(err){
-        res.status(401).send('Could not create an account at the moment, try again')
+        res.status(201).send('Could not create an account at the moment, try again')
     }
 }
 
@@ -76,8 +76,8 @@ const Distributor_User=async(payload)=>{
         const new_Distributor = await Distributor.create({
 			first_name:             payload.first_name,
             last_name:              payload.last_name,
-			mobile_of_company:  payload.mobile_of_company,		
-			email_of_company:   payload.email_of_company,		
+			mobile_of_company:      "",		
+			email_of_company:       payload.email_of_company,		
             address_of_company:     "",	
 			company_name:           "",
             description:			"",
@@ -126,7 +126,7 @@ const Manufacturer_User=async(payload)=>{
         const new_Manufacturer = await Manufacturer.create({
 			first_name:             payload.first_name,
             last_name:              payload.last_name,
-			mobile_of_company:  payload.mobile_of_company,		
+			mobile_of_company:  "",		
 			email_of_company:   payload.email_of_company,	
             address_of_company:     "",	
 			company_name:           "",
@@ -135,7 +135,7 @@ const Manufacturer_User=async(payload)=>{
             access_token:           token,
 			key_contact:            [],	
 			experts:	            [],
-			distributors:          [],
+			distributors:            [],
             industries:	            [],
 			technologies:           [],
             subscription:	        false,
@@ -177,7 +177,7 @@ const Sales_User=async(payload)=>{
 			first_name:         payload.first_name,	
 			last_name:          payload.last_name,
 			gender:             "",		
-			mobile_of_salesperson:  payload.mobile_of_company,		
+			mobile_of_salesperson:  "",		
 			email_of_salesperson:   payload.email_of_company,		
 			address:            "",	
 			company_name:       "",
@@ -188,7 +188,7 @@ const Sales_User=async(payload)=>{
 	        hub_account_id: 	"",
             account_status:     false,
 			recents:            [],
-            open_to_consultancy:    payload.open_to_consultancy,
+            open_to_consultancy:    false,
             verification_status:    false,
             suspension_status:  false,
 		})

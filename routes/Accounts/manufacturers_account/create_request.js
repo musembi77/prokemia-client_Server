@@ -25,9 +25,8 @@ router.post('/',async (req,res,next)=>{
 		await Manufacturer_Request.create({
 			industry: 				payload.industry,
 			technology: 			payload.technology,
-			region: 				payload.lister_email,
-			description: 			payload.shortonexpiry,
-			name_of_requester:  	existing_manufacturer.company_name,
+			region: 				payload.region,
+			description: 			payload.description,
 			id_of_requester:		id,
 		})
 		

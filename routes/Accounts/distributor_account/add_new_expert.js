@@ -20,7 +20,7 @@ router.post('/',async(req,res)=>{
 	{
 		//create experts object item
 		expert_item = {
-			'name': 		payload.first_name,
+			'name': 		payload.name,
 			'mobile': 		payload.mobile, 
 			'email': 		payload.email,
 			'role': 		payload.role

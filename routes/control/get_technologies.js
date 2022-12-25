@@ -6,7 +6,7 @@ let router = express.Router()
 router.get('/',async(req,res)=>{
     try{
         const technologies = await Technology.find();
-        return res.status(200).json(technologies)
+        return res.status(200).send(technologies)
     }catch(err){
         console.log(err);
     }

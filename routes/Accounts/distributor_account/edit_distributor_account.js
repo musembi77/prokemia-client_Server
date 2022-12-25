@@ -22,10 +22,9 @@ router.post('/',async(req,res)=>{
 			const query = {_id:id};
 	        const update = { $set: {
 				first_name:         payload.first_name,
-				last_name:          payload.last_name,
-				email_of_company:   payload.email,		
-				mobile_of_company:  payload.mobile,		
-				address_of_company: payload.address,	
+				last_name:          payload.last_name,		
+				mobile_of_company:  payload.mobile_of_company,		
+				address_of_company: payload.address_of_company,	
 				company_name:       payload.company_name,
 				description:		payload.description
 	        }};

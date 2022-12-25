@@ -1,15 +1,15 @@
-//modules imports
-const express = require('express');
-//models imports
+const express = require("express")
+
 const Order = require("../../models/Utils/Order.js");
 
-let router = express.Router();
+const router = express.Router();
 
 router.get('/',async(req,res)=>{
+    console.log('test')
     try{
         const orders = await Order.find();
-        return res.status(200).json(orders)
-        //console.log(response)
+        console.log(orders)
+        return res.status(200).send(orders)
     }catch(err){
         console.log(err);
     }
