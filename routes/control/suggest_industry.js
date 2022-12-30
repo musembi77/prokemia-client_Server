@@ -6,11 +6,13 @@ const router = express.Router()
 router.post("/",async(req,res)=>{
 	//get payload
 	const payload = req.body;
+	console.log(payload)
 	//check if payload exists
 	if (!payload)
 		return res.send(401).send("Bad Request")
 
-	const existing_industry = await Industry.findOne({title:payload.title});
+	const title = payload.title
+	const existing_industry = await Industry.findOne({title:title});
 
 	if (!existing_industry){
 		try{

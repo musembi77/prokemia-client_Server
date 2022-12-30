@@ -21,9 +21,10 @@ router.post("/",async(req,res)=>{
 			unit_price: 				payload.unit_price,
 			creator_id:					payload.creator_id,
 			total: 						payload.total,
+			order_notification_status:  false,
 			status: 					"pending",
 		})
-		
+		console.log(new_Order)
 		return res.status(200).send("successfully created your order")
 	}catch(err){
 		console.log(err)

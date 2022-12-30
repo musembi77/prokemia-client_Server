@@ -28,6 +28,7 @@ router.post('/',async (req,res,next)=>{
 			region: 				payload.region,
 			description: 			payload.description,
 			id_of_requester:		id,
+			complete_request:       false
 		})
 		
 		return res.status(200).send("successfully created this request")
