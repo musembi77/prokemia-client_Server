@@ -6,6 +6,6 @@ const server = http.createServer(app);
 const host = '0.0.0.0';
 const port = process.env.Port || 5000
 
-server.listen(port,host, (req,res)=>{
+server.listen(port, host, (req,res)=>{
 	console.log(`server listening on http://localhost:${port}`)
 })
