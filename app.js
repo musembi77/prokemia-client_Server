@@ -233,7 +233,7 @@ app.use("/api/add_email_to_mailing_list",create_landing_page_mailing_list);//don
 /*---prokemia_hub---*/
 
 app.get('/',(req,res)=>{
-	res.send("Home")
+	res.send("<html> <head>server Response</head><body><h1> This page was render directly from the server <p>Hello there welcome to Prokemia</p></h1></body></html>")
 })
 
 module.exports = app;
