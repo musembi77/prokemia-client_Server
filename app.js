@@ -9,7 +9,7 @@ app.use(express.json())
 // app.use(cors({credentials:true, 
 //     origin: 'http://localhost:3000' }));
 let origins = ['https://prokemia-client-web-musembi77.vercel.app','https://prokemia-client-web-git-master-musembi77.vercel.app','http://localhost:3000','https://prokemia-client-web.vercel.app'];
-app.use(cors({credentials:true, origin: origins}));
+app.use(cors({credentials:false, origin: origins}));
 //imports
 
 /*--accounts---*/
