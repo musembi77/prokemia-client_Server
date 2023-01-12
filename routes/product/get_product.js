@@ -8,7 +8,7 @@ router.post('/',async(req,res)=>{
     const  payload  = req.body;
 
     const id = payload._id
-    //console.log(id)
+    console.log('hi')
     //use payload to find products
     if (!payload)
     	return res.status(401).send('Bad request')

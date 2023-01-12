@@ -28,6 +28,7 @@ router.post('/',async(req,res)=>{
 				address: 			payload.address_of_company,
 				position:           payload.position,	
 				gender:             payload.gender,
+				profile_photo_url:  payload.profile_photo_url,
 	        }};
 	        const options = { };
 	        

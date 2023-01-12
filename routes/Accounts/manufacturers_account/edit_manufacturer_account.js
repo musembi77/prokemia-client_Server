@@ -26,7 +26,8 @@ router.post('/',async (req,res,next)=>{
 				mobile_of_company:  payload.mobile_of_company,		
 				address_of_company: payload.address_of_company,	
 				company_name:       payload.company_name,
-				description:		payload.description
+				description:		payload.description,
+				profile_photo_url:  payload.profile_photo_url,
 	        }};
 	        const options = { };
 	        

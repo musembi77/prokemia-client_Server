@@ -10,13 +10,18 @@ router.post("/",async(req,res)=>{
 	if (!payload)
 		return res.send(401).send("Bad Request")
 
-	const existing_technology = await Technology.findOne({title:payload.title});
+	const existing_title = payload.title
+
+	console.log(payload)
+	const existing_technology = await Technology.findOne({title:existing_title});
+	console.log(existing_technology)
 
 	if (!existing_technology){
 		try{
 			const newTechnology= await Technology.create({
 				title:			payload.title,
 				cover_image: 	"",
+				description:    payload.description,
 				verification_status: 		false,
 			})
 			return res.status(200).send("successfully suggested a new technology")
@@ -25,7 +30,8 @@ router.post("/",async(req,res)=>{
 			return res.status(500).send("Could not suggest a new technology")
 		}
 	}else{
-	return res.status(401).send("This technology already exists")}
+		return res.status(401).send("This technology already exists")
+	}
 })
 
 module.exports = router;

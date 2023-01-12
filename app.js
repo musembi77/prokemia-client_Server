@@ -67,7 +67,7 @@ const change_salesperson_password = require("./routes/Accounts/salesperson_accou
 const create_hub_account = require("./routes/Accounts/salesperson_account/create_hub_account.js");
 const delete_hub_account = require("./routes/Accounts/salesperson_account/delete_hub_account.js");
 const edit_hub_account = require("./routes/Accounts/salesperson_account/edit_hub_account.js");
-const create_order = require("./routes/Accounts/salesperson_account/orders/create_order.js");//
+const create_order = require("./routes/orders/create_order.js");//
 const get_orders = require("./routes/orders/get_orders.js");//
 
 /*---control---*/

@@ -29,6 +29,7 @@ router.post('/',async(req,res)=>{
 				position:           	payload.position,
 				account_status:         payload.account_status,
 				open_to_consultancy:    payload.open_to_consultancy,
+				profile_photo_url:  	payload.profile_photo_url,
             	verification_status:    false,
 	        }};
 	        const options = { };

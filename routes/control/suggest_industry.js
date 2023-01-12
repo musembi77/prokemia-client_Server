@@ -19,13 +19,14 @@ router.post("/",async(req,res)=>{
 		const newIndustry = await Industry.create({
 			title:						payload.title,
 			cover_image: 				"",
+			description:  				payload.description,
 			verification_status: 		false, 
 		})
-		return res.status(200).send("successfully suggested a new industry")
-	}catch(err){
-		console.log(err)
-		return res.status(500).send("Could not suggest a new industry")
-	}
+			return res.status(200).send("successfully suggested a new industry")
+		}catch(err){
+			console.log(err)
+			return res.status(500).send("Could not suggest a new industry")
+		}
 	}else{
 		return res.status(401).send("This industry already exists")
 	}

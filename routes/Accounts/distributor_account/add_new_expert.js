@@ -23,7 +23,8 @@ router.post('/',async(req,res)=>{
 			'name': 		payload.name,
 			'mobile': 		payload.mobile, 
 			'email': 		payload.email,
-			'role': 		payload.role
+			'role': 		payload.role,
+			'description': 		payload.description,
 		}
 
 		try{

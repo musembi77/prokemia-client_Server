@@ -36,7 +36,7 @@ router.post("/",async(req,res)=>{
 			email_of_lister: 					payload.email_of_lister,
 			short_on_expiry: 					payload.short_on_expiry,
 			listed_by_id:						payload.listed_by_id,
-			website_link_to_Seller: 			payload.website_link_to_Seller,
+			website_link_to_Seller: 			payload.website_link,
 			verification_status:				false,
 		})
 		console.timeEnd("new_Product")
