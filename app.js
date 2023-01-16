@@ -30,11 +30,15 @@ const delete_distributor_account = require("./routes/Accounts/distributor_accoun
 const change_distributor_password = require("./routes/Accounts/distributor_account/change_password.js");
 const add_new_expert_distributor = require("./routes/Accounts/distributor_account/add_new_expert.js");
 const add_new_manufacturer_distributor = require("./routes/Accounts/distributor_account/add_new_manufacturer");
+const delete_manufacturer_distributor = require("./routes/Accounts/distributor_account/delete_manufacturer.js");
+const edit_manufacturer_distributor = require("./routes/Accounts/distributor_account/edit_manufacturer.js");
+const delete_expert_distributor = require("./routes/Accounts/distributor_account/delete_expert.js");
+const edit_expert_distributor = require("./routes/Accounts/distributor_account/edit_expert.js");
 /*
-	const delete_expert_distributor = require("./routes/Accounts/distributor_account/delete_expert.js");
-	const delete_manufacturer_distributor = require("./routes/Accounts/distributor_account/delete_manufacturer.js");
-	const edit_expert_distributor = require("./routes/Accounts/distributor_account/edit_expert.js");
-	const edit_manufacturer_distributor = require("./routes/Accounts/distributor_account/edit_manufacturer.js");
+	
+	
+	
+	
 	const get_products_distributor = require("./routes/Accounts/distributor_account/get_products.js")
 	const sponsor_product_distributor = require("./routes/Accounts/distributor_account/sponsor_product.js");
 	const subscribe_to_plan_distributor = require("./routes/Accounts/distributor_account/subscribe_to_plan.js");
@@ -49,11 +53,15 @@ const change_manufacturer_password = require("./routes/Accounts/manufacturers_ac
 const add_new_expert_manufacturer = require("./routes/Accounts/manufacturers_account/add_new_expert.js");
 const add_new_distributor_manufacturer = require("./routes/Accounts/manufacturers_account/add_new_distributor.js");
 const create_request = require("./routes/Accounts/manufacturers_account/create_request");
+const delete_distributor_manufacturer = require("./routes/Accounts/manufacturers_account/delete_distributor.js");
+const edit_distributor_manufacturer = require("./routes/Accounts/manufacturers_account/edit_distributors.js");
+const delete_expert_manufacturer = require("./routes/Accounts/manufacturers_account/delete_expert.js");
+const edit_expert_manufacturer = require("./routes/Accounts/manufacturers_account/edit_expert.js");
 /*
-	const delete_expert_manufacturer = require("./routes/Accounts/manufacturers_account/delete_expert.js");
-	const delete_distributor_manufacturer = require("./routes/Accounts/manufacturers_account/delete_distributor.js");
-	const edit_expert_manufacturer = require("./routes/Accounts/manufacturers_account/edit_expert.js");
-	const edit_distributor_manufacturer = require("./routes/Accounts/manufacturers_account/edit_manufacturer.js");
+	
+	
+	
+	
 	const get_products_manufacturer = require("./routes/Accounts/manufacturers_account/get_products_manufacturer.js")
 	const sponsor_product_manufacturer = require("./routes/Accounts/manufacturers_account/sponsor_product.js");
 	const subscribe_to_plan_manufacturer = require("./routes/Accounts/manufacturers_account/subscribe_to_plan.js");
@@ -145,11 +153,15 @@ app.use("/api/delete_distributor_account",delete_distributor_account);//done
 app.use("/api/change_distributor_password",change_distributor_password);//done
 app.use("/api/add_new_expert_distributor",add_new_expert_distributor);//done
 app.use("/api/add_new_manufacturer_distributor",add_new_manufacturer_distributor);//done
+app.use("/api/delete_manufacturer_distributor",delete_manufacturer_distributor);
+app.use("/api/edit_manufacturer_distributor",edit_manufacturer_distributor);
+app.use("/api/delete_expert_distributor",delete_expert_distributor);
+app.use("/api/edit_expert_distributor",edit_expert_distributor);
 /*
-	app.use("/api/delete_expert_distributor",delete_expert_distributor);
-	app.use("/api/delete_manufacturer_distributor",delete_manufacturer_distributor);
-	app.use("/api/edit_expert_distributor",edit_expert_distributor);
-	app.use("/api/edit_manufacturer_distributor",edit_manufacturer_distributor);
+	
+	
+	
+	
 	app.use("/api/get_products_distributor",get_products_distributor);
 	app.use("/api/sponsor_product_distributor",sponsor_product_distributor);
 	app.use("/api/subscribe_to_plan_distributor",subscribe_to_plan_distributor);
@@ -164,11 +176,15 @@ app.use("/api/change_manufacturer_password",change_manufacturer_password);
 app.use("/api/add_new_expert_manufacturer",add_new_expert_manufacturer);//done
 app.use("/api/add_new_distributor_manufacturer",add_new_distributor_manufacturer);//done
 app.use("/api/create_request",create_request);//done
+app.use("/api/delete_distributor_manufacturer",delete_distributor_manufacturer);
+app.use("/api/edit_distributor_manufacturer",edit_distributor_manufacturer);
+app.use("/api/delete_expert_manufacturer",delete_expert_manufacturer);
+app.use("/api/edit_expert_manufacturer",edit_expert_manufacturer);
 /*
-	app.use("/api/delete_expert_manufacturer",delete_expert_manufacturer);
-	app.use("/api/delete_distributor_manufacturer",delete_distributor_manufacturer);
-	app.use("/api/edit_expert_manufacturer",edit_expert_manufacturer);
-	app.use("/api/edit_distributor_manufacturer",edit_distributor_manufacturer);
+	
+	
+	
+	
 	app.use("/api/get_products_manufacturer",get_products_manufacturer);
 	app.use("/api/sponsor_product_manufacturer",sponsor_product_manufacturer);
 	app.use("/api/subscribe_to_plan_manufacturer",subscribe_to_plan_manufacturer);

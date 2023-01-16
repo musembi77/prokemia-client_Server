@@ -24,7 +24,7 @@ router.post('/',async(req,res)=>{
 	const client_result = await Client.findOne({email_of_company:email})
 	const distributor_result= await Distributor.findOne({email_of_company:email})
 	const manufacturer_result= await Manufacturer.findOne({email_of_company:email})
-	const sales_result= await Sales.findOne({email_of_company:email})
+	const sales_result= await Sales.findOne({email_of_salesperson:email})
 
 	//let user_result = null; // gets the user from non-null query
 	//console.log(client_result)
@@ -75,7 +75,7 @@ router.post('/',async(req,res)=>{
 		} // true value indictates user credentials are correct
 		return res.status(401).send("wrong credentials, try again"); // false value indicates user credentials are wrong
 	}else if (sales_result !== null){
-		//console.log(sales_result)
+		console.log(sales_result)
 		const acc_type = 'sales'
 		if(bcrypt.compareSync(password,sales_result.password)){
 			const id = sales_result._id

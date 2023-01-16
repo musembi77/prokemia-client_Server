@@ -23,7 +23,7 @@ router.post("/",async(req,res)=>{
 			if (response === false) 
 				// if the response is false i.e if account does not exist condition to create a new account is called
 				handle_create_account(payload).then((response)=>{
-					//console.log(response)
+					console.log(response)
 					return res.status(200).send(response)
 				}) //creates a new account
 			// if (response === -1)
@@ -61,14 +61,6 @@ const check_Existing_Account=async(payload)=>{
 		return true
 	else
 		return false
-
-	// if (client_result === true || distributor_result === true || manufacturer_result === true || salesperson_result === true) 
-	// 	//if either of the results are true, returns true value 
-	// 	return (true)
-	// else if ( client_result === -1 || distributor_result === -1 || manufacturer_result === -1 || salesperson_result === -1)
-	// 	return -1; // if an error occurs in all checks
-	// else
-	// 	return false// account does not exist
 }
 
 //creates a new account

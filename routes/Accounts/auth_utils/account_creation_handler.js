@@ -56,6 +56,7 @@ const Client_User=async(payload)=>{
 //creates a new distributor account
 const Distributor_User=async(payload)=>{
 	//check if payload is available
+    console.log(payload)
     if(!payload){
         return  res.status(401).send('Bad Request'); 
     }
@@ -97,7 +98,7 @@ const Distributor_User=async(payload)=>{
             verification_status:    false,
             suspension_status:  false,
 		})
-        
+        console.log(new_Distributor)
         //on success email/sms the client to verify account
         return new_Distributor //return new user 
     }catch(err){
