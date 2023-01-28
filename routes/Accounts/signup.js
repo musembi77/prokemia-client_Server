@@ -87,8 +87,10 @@ const handle_create_account=async(payload)=>{
 
 const send_account_creation_email=async(response)=>{
 	await axios.post("https://prokemiaemailsmsserver-production.up.railway.app/api/create_account_email",response).then((res)=>{
-		console.log(res)
+		// console.log(res)
+		return res.status(200).send("email sent")
 	}).catch((err)=>{
-		console.log(err)
+		//console.log(err)
+		return res.status(500).send("error while sending email")
 	})
 }

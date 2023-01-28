@@ -10,9 +10,10 @@ const Send_delete_account_email=async(email_payload)=>{
 		return res.status(400).send("Bad Request, no email_payload found")
 
 	await axios.post("https://prokemiaemailsmsserver-production.up.railway.app/api/deleted_account_email",email_payload).then(()=>{
-		console.log("success")
+		return res.status(200).send("email sent")
+		//console.log("success")
 	}).catch((err)=>{
-		console.log(err)
+		return res.status(500).send("could not send email")
 	})
 }
 
