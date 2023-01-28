@@ -29,7 +29,8 @@ const SalesPersonSchema = new mongoose.Schema({
 	open_to_consultancy: { type: Boolean},
 	//account status - announymous or not
 	account_status:		{type: Boolean},
-	//verification_status
+	//verification_status,
+	valid_email_status: { type: Boolean},
 	verification_status:		{ type: Boolean},
 	suspension_status:  { type: Boolean},
 	//date of joining

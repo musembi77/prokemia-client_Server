@@ -22,6 +22,7 @@ const ClientSchema = new mongoose.Schema({
 	//security - logins and authentications
 	password:			{ type: String},
 	access_token: 		{ type: String},
+	valid_email_status: { type: Boolean},
 	//listing_status - check if user has listed a product
 	listing_status: 	{type: Boolean},
 	suspension_status:  { type: Boolean},

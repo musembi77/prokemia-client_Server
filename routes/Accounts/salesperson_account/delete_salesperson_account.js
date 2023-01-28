@@ -2,6 +2,7 @@
 const express = require("express");
 //models import
 const Sales = require('../../../models/Sales/SalesPerson.js');
+const Send_delete_account_email = require("../send_deleted_account_email.js")
 
 const router = express.Router();
 
@@ -18,6 +19,10 @@ router.post('/',async(req,res)=>{
     if (existing_salesperson != null)
 		try{
 			await Sales.findOneAndDelete({_id:id} ).then((response)=>{
+				const email_payload = {
+	                email : existing_salesperson.email_of_salesperson
+	            }
+	            Send_delete_account_email(email_payload)
                 return res.status(200).send("Sucessfully deleted this account")
             })
     	}catch(err){

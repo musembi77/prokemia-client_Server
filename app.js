@@ -20,6 +20,7 @@ const edit_client_account = require("./routes/Accounts/client_account/edit_clien
 const get_client_account = require("./routes/Accounts/client_account/get_client_account.js");
 const delete_client_account = require("./routes/Accounts/client_account/delete_client_account.js");
 const change_client_password = require("./routes/Accounts/client_account/change_password.js");
+const verify_client_account = require("./routes/Accounts/client_account/verify_client_account");
 // const get_product = require("./routes/Accounts/client_account/get_products.js");
 
 //distributor
@@ -34,6 +35,7 @@ const delete_manufacturer_distributor = require("./routes/Accounts/distributor_a
 const edit_manufacturer_distributor = require("./routes/Accounts/distributor_account/edit_manufacturer.js");
 const delete_expert_distributor = require("./routes/Accounts/distributor_account/delete_expert.js");
 const edit_expert_distributor = require("./routes/Accounts/distributor_account/edit_expert.js");
+const verify_distributor_account = require("./routes/Accounts/distributor_account/verify_distributor_account.js");
 /*
 	
 	
@@ -57,11 +59,8 @@ const delete_distributor_manufacturer = require("./routes/Accounts/manufacturers
 const edit_distributor_manufacturer = require("./routes/Accounts/manufacturers_account/edit_distributors.js");
 const delete_expert_manufacturer = require("./routes/Accounts/manufacturers_account/delete_expert.js");
 const edit_expert_manufacturer = require("./routes/Accounts/manufacturers_account/edit_expert.js");
+const verify_manufacturer_account = require("./routes/Accounts/manufacturers_account/verify_manufacturer_account.js");
 /*
-	
-	
-	
-	
 	const get_products_manufacturer = require("./routes/Accounts/manufacturers_account/get_products_manufacturer.js")
 	const sponsor_product_manufacturer = require("./routes/Accounts/manufacturers_account/sponsor_product.js");
 	const subscribe_to_plan_manufacturer = require("./routes/Accounts/manufacturers_account/subscribe_to_plan.js");
@@ -77,6 +76,7 @@ const delete_hub_account = require("./routes/Accounts/salesperson_account/delete
 const edit_hub_account = require("./routes/Accounts/salesperson_account/edit_hub_account.js");
 const create_order = require("./routes/orders/create_order.js");//
 const get_orders = require("./routes/orders/get_orders.js");//
+const verify_salesperson_account = require("./routes/Accounts/salesperson_account/verify_salesperson_account.js");
 
 /*---control---*/
 const get_industries = require("./routes/control/get_industries.js");
@@ -144,6 +144,7 @@ app.use("/api/signin",signin);//done
 app.use("/api/edit_client_account",edit_client_account);//done
 app.use("/api/get_client_account",get_client_account);//done
 app.use("/api/delete_client_account",delete_client_account);//done
+app.use("/api/verify_client_account",verify_client_account);
 app.use("/api/change_client_password",change_client_password);
 //distributor
 app.use("/api/edit_distributor_account",edit_distributor_account);//done
@@ -157,6 +158,7 @@ app.use("/api/delete_manufacturer_distributor",delete_manufacturer_distributor);
 app.use("/api/edit_manufacturer_distributor",edit_manufacturer_distributor);
 app.use("/api/delete_expert_distributor",delete_expert_distributor);
 app.use("/api/edit_expert_distributor",edit_expert_distributor);
+app.use("/api/verify_distributor_account",verify_distributor_account);
 /*
 	
 	
@@ -180,6 +182,7 @@ app.use("/api/delete_distributor_manufacturer",delete_distributor_manufacturer);
 app.use("/api/edit_distributor_manufacturer",edit_distributor_manufacturer);
 app.use("/api/delete_expert_manufacturer",delete_expert_manufacturer);
 app.use("/api/edit_expert_manufacturer",edit_expert_manufacturer);
+app.use("/api/verify_manufacturer_account",verify_manufacturer_account);
 /*
 	
 	
@@ -200,6 +203,7 @@ app.use("/api/delete_hub_account",delete_hub_account);
 app.use("/api/edit_hub_account",edit_hub_account);
 app.use("/api/create_order",create_order);//done
 app.use("/api/get_orders",get_orders);//done 
+app.use("/api/verify_salesperson_account",verify_salesperson_account);
 
 /*---control---*/
 app.use("/api/get_industries",get_industries);//done

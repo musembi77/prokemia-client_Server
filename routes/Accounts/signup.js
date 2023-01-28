@@ -1,6 +1,7 @@
 //modules import
 const express = require("express");
 const bcrypt = require('bcryptjs');
+const axios = require('axios');
 
 //account creation fucntions at utils
 const verify = require("./auth_utils/verify.js")
@@ -82,4 +83,12 @@ const handle_create_account=async(payload)=>{
 		var result = utils.create_salesperson_account(payload) // function to create a new salesperson
 		return result
 	}
+}
+
+const send_account_creation_email=async(response)=>{
+	await axios.post("https://prokemiaemailsmsserver-production.up.railway.app/api/create_account_email",response).then((res)=>{
+		console.log(res)
+	}).catch((err)=>{
+		console.log(err)
+	})
 }

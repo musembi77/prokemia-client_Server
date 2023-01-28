@@ -40,6 +40,7 @@ const Distributor_Schema = new mongoose.Schema({
 	subscription: 			{ type: Boolean},
 	subscription_plan: 		{ type: String},
 	//verification_status
+	valid_email_status: { type: Boolean},
 	verification_status:		{ type: Boolean},
 	suspension_status:  { type: Boolean},
 	//date of joining

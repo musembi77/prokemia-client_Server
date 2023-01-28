@@ -1,5 +1,6 @@
 const express = require('express');
 const Distributor = require('../../../models/Distributor/Distributor.js');
+const Send_delete_account_email = require("../send_deleted_account_email.js")
 
 let router = express.Router()
 
@@ -19,6 +20,10 @@ router.post("/",async (req,res)=>{
         	return res.status(400).send("could not find this account")
 
 		await Distributor.findOneAndDelete({_id:id} ).then((response)=>{
+            const email_payload = {
+                email : existing_distributor.email_of_company
+            }
+            Send_delete_account_email(email_payload)
 			return res.status(200).send("Sucessfully deleted this account.")
 		})
     }catch(err){

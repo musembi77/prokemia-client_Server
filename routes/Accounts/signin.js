@@ -90,7 +90,7 @@ router.post('/',async(req,res)=>{
 		} // true value indictates user credentials are correct
 		return res.status(401).send("wrong credentials, try again"); // false value indicates user credentials are wrong
 	}else{
-		return res.status(500).send("wrong credentials,");
+		return res.status(500).send("wrong credentials,or your account does not exist");
 	}
 })
 

@@ -43,6 +43,7 @@ const Client_User=async(payload)=>{
 			email_of_company:   payload.email_of_company,
             listing_status:     false,	
 			recents:            [],
+            valid_email_status: false,
             suspension_status:  false,	
 		})
         
@@ -96,6 +97,7 @@ const Distributor_User=async(payload)=>{
             listing_status: 	    false,
             sponsored_products:		0,
             verification_status:    false,
+            valid_email_status: false,
             suspension_status:  false,
 		})
         console.log(new_Distributor)
@@ -147,6 +149,7 @@ const Manufacturer_User=async(payload)=>{
             listing_status: 	    false,
             sponsored_products:		0,
             verification_status:    false,
+            valid_email_status: false,
             suspension_status:  false,
 		})
         
@@ -195,6 +198,7 @@ const Sales_User=async(payload)=>{
 			recents:            [],
             open_to_consultancy:    false,
             verification_status:    false,
+            valid_email_status: false,
             suspension_status:  false,
 		})
         
