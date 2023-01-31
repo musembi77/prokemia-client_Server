@@ -14,6 +14,7 @@ app.use(cors({credentials:true, origin: origins}));
 
 /*--accounts---*/
 const signup = require("./routes/Accounts/signup.js");
+const password_reset = require("./routes/Accounts/auth_utils/password_reset.js");
 const signin = require("./routes/Accounts/signin.js");
 //client
 const edit_client_account = require("./routes/Accounts/client_account/edit_client_account.js");
@@ -140,6 +141,7 @@ const get_langing_page_mailing_list = require("./routes/Support/get_landing_page
 // /*--account---*/
 app.use("/api/signup",signup);//done
 app.use("/api/signin",signin);//done
+app.use("/api/password_reset",password_reset);//done
 //client
 app.use("/api/edit_client_account",edit_client_account);//done
 app.use("/api/get_client_account",get_client_account);//done
