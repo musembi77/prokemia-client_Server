@@ -21,6 +21,8 @@ router.post('/',async(req,res)=>{
 	        const update = { $set: {
 	            first_name:         	payload.first_name,	
 				last_name:          	payload.last_name,
+				bio:                	payload.bio,
+            	payment_method:     	payload.payment_method,
 				gender:             	payload.gender,		
 				email_of_salesperson:   payload.email,
 				mobile_of_salesperson:  payload.mobile,		

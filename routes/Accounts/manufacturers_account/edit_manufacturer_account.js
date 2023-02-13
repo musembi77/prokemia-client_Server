@@ -20,14 +20,15 @@ router.post('/',async (req,res,next)=>{
 		try{
 			const query = {_id:id};
 	        const update = { $set: {
-	            first_name:         payload.first_name,
-				last_name:          payload.last_name,
-				email_of_company:   payload.email_of_company,		
-				mobile_of_company:  payload.mobile_of_company,		
-				address_of_company: payload.address_of_company,	
-				company_name:       payload.company_name,
-				description:		payload.description,
-				profile_photo_url:  payload.profile_photo_url,
+				contact_person_name:        payload.contact_person_name,
+				contact_mobile:          	payload.contact_mobile,		
+				contact_email:          	payload.contact_email,	
+				email_of_company:   		payload.email_of_company,		
+				mobile_of_company:  		payload.mobile_of_company,		
+				address_of_company: 		payload.address_of_company,	
+				company_name:       		payload.company_name,
+				description:				payload.description,
+				profile_photo_url:  		payload.profile_photo_url,
 	        }};
 	        const options = { };
 	        

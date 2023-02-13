@@ -77,8 +77,9 @@ const Distributor_User=async(payload)=>{
         )
         //console.log(token)
         const new_Distributor = await Distributor.create({
-			first_name:             '',
-            last_name:              '',
+			contact_person_name:             '',
+            contact_mobile:              '',
+            contact_email:              '',
             profile_photo_url:      '',
 			mobile_of_company:      "",		
 			email_of_company:       payload.email_of_company,		
@@ -90,8 +91,6 @@ const Distributor_User=async(payload)=>{
 			key_contact:            [],	
 			experts:	            [],
 			manufacturers:          [],
-            industries:	            [],
-			technologies:           [],
             subscription:	        false,
 			subscription_plan:      '',
             listing_status: 	    false,
@@ -129,8 +128,9 @@ const Manufacturer_User=async(payload)=>{
         )
         //console.log(token)
         const new_Manufacturer = await Manufacturer.create({
-			first_name:             payload.first_name,
-            last_name:              payload.last_name,
+            contact_person_name:             '',
+            contact_mobile:              '',
+            contact_email:              '',
             profile_photo_url:      '',
 			mobile_of_company:      "",		
 			email_of_company:       payload.email_of_company,	
@@ -142,8 +142,6 @@ const Manufacturer_User=async(payload)=>{
 			key_contact:            [],	
 			experts:	            [],
 			distributors:           [],
-            industries:	            [],
-			technologies:           [],
             subscription:	        false,
 			subscription_plan:      '',
             listing_status: 	    false,
@@ -183,6 +181,8 @@ const Sales_User=async(payload)=>{
         const new_SalesPerson = await Sales.create({
 			first_name:         payload.first_name,	
 			last_name:          payload.last_name,
+            bio:                "",
+            payment_method:     '',
 			gender:             "",		
             profile_photo_url:  '',
 			mobile_of_salesperson:  "",		
