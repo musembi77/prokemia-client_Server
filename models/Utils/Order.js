@@ -12,7 +12,7 @@ const Order_Schema = new mongoose.Schema({
 	mobile_of_client: 			{ type: String},
 	email_of_client:			{ type: String},
 	location_of_client:			{ type: String},
-	//product info
+	//product info -- []
 	name_of_product:  			{ type: String},
 	volume_of_items:			{ type: Number},
 	unit_price: 				{ type: Number},
