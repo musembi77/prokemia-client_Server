@@ -26,7 +26,7 @@ router.post('/',async (req,res,next)=>{
 	        const options = { };
 			
 			await Distributor.updateOne( query, update, options).then((response)=>{
-				console.log(response)
+				//console.log(response)
 				return res.status(200).send("success")
 			})
 		}catch(err){

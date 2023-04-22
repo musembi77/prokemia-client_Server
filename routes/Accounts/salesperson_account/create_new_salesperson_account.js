@@ -51,6 +51,7 @@ router.post('/',async (req,res,next)=>{
         //on success email/sms the client to verify account
         return res.status(200).json(new_SalesPerson) //return new user 
     }catch(err){
+        console.log(err)
         res.status(401).send('Could not create an account at the moment, try again')
     }
 });

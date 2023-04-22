@@ -51,6 +51,7 @@ router.post("/",async (req,res)=>{
         
         await Product.updateOne( query, update, options).then((response)=>{return res.status(200).send("success")})
     }catch(err){
+        console.log(err)
         return res.status(500).send("Could not edit this product, try again in a few minutes");
     }
 })

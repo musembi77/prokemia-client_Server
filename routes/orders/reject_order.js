@@ -30,6 +30,7 @@ router.post("/",async (req,res)=>{
         
         await Order.updateOne( query, update, options).then((response)=>{return res.status(200).send("success")})
     }catch(err){
+        console.log(err)
         return res.status(500).send("Could not edit this order, try again in a few minutes");
     }
 })

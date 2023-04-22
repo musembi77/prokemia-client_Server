@@ -31,7 +31,7 @@ router.post('/',async (req,res,next)=>{
 			id_of_requester:		id,
 			complete_request:       false
 		})
-		console.log(new_obj)
+		//console.log(new_obj)
 		return res.status(200).send("successfully created this request")
 	}catch(err){
 		console.log(err)

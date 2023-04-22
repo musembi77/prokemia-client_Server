@@ -34,8 +34,8 @@ router.post('/',async (req,res,next)=>{
 	        const options = { };
 			
 			await Manufacturer.updateOne( query, update, options).then((response)=>{
-				console.log(response)
-				console.log('s1')
+				//console.log(response)
+				//console.log('s1')
 				//res.status(200).send("success")
 			})
 		}catch(err){
@@ -49,8 +49,8 @@ router.post('/',async (req,res,next)=>{
 			const options = { };
 			
 			await Manufacturer.updateOne( query, update, options).then((response)=>{
-				console.log(response)
-				console.log('s2')
+				//console.log(response)
+				//console.log('s2')
 				return res.status(200).send("success")
 			})
 		}catch(err){

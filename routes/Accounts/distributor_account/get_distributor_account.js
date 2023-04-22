@@ -17,7 +17,7 @@ router.post('/',async (req,res,next)=>{
 	const existing_distributor = await Distributor.findOne({_id:id}) //checks if a client_Account already exists
 
 	if (existing_distributor != null) //if there is a client_account
-        console.log(existing_distributor)
+        //console.log(existing_distributor)
 		return res.status(200).send(existing_distributor);
 	return res.status(500).send("could not find this account, it may have been deleted or it doesnt exist");
 });
