@@ -46,7 +46,7 @@ router.post("/",async(req,res)=>{
 				verification_status:				false,
 			})
 			console.timeEnd("new_Product")
-			return res.status(200).send("successfully added a new product")
+			return res.status(200).send(new_Product)
 		}catch(err){
 			console.log(err)
 			return res.status(500).send("Could not add a new product")
