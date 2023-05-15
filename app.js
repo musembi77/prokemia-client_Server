@@ -37,15 +37,7 @@ const edit_manufacturer_distributor = require("./routes/Accounts/distributor_acc
 const delete_expert_distributor = require("./routes/Accounts/distributor_account/delete_expert.js");
 const edit_expert_distributor = require("./routes/Accounts/distributor_account/edit_expert.js");
 const verify_distributor_account = require("./routes/Accounts/distributor_account/verify_distributor_account.js");
-/*
-	
-	
-	
-	
-	const get_products_distributor = require("./routes/Accounts/distributor_account/get_products.js")
-	const sponsor_product_distributor = require("./routes/Accounts/distributor_account/sponsor_product.js");
-	const subscribe_to_plan_distributor = require("./routes/Accounts/distributor_account/subscribe_to_plan.js");
-*/
+
 
 //manufacturer
 const edit_manufacturer_account = require("./routes/Accounts/manufacturers_account/edit_manufacturer_account.js");
@@ -61,11 +53,7 @@ const edit_distributor_manufacturer = require("./routes/Accounts/manufacturers_a
 const delete_expert_manufacturer = require("./routes/Accounts/manufacturers_account/delete_expert.js");
 const edit_expert_manufacturer = require("./routes/Accounts/manufacturers_account/edit_expert.js");
 const verify_manufacturer_account = require("./routes/Accounts/manufacturers_account/verify_manufacturer_account.js");
-/*
-	const get_products_manufacturer = require("./routes/Accounts/manufacturers_account/get_products_manufacturer.js")
-	const sponsor_product_manufacturer = require("./routes/Accounts/manufacturers_account/sponsor_product.js");
-	const subscribe_to_plan_manufacturer = require("./routes/Accounts/manufacturers_account/subscribe_to_plan.js");
-*/
+
 
 //sales
 const edit_salesperson_account = require("./routes/Accounts/salesperson_account/edit_salesperson_account.js");//done
@@ -138,6 +126,7 @@ const create_support_question = require("./routes/Support/create_support_questio
 const get_support_questions = require("./routes/Support/get_support_questions.js");
 const create_landing_page_mailing_list = require("./routes/Support/Landing_page_mailing_list.js");
 const get_langing_page_mailing_list = require("./routes/Support/get_landing_page_mailing_list.js");
+const create_request_demo_ticket = require("./routes/Support/create_request_demo_ticket.js");
 // //routes
 
 // /*--account---*/
@@ -248,6 +237,7 @@ app.use("/api/create_feedback",create_feedback);//done
 app.use("/api/get_feedbacks",get_feedbacks);
 app.use("/api/create_support_question",create_support_question);//done
 app.use("/api/add_email_to_mailing_list",create_landing_page_mailing_list);//done
+app.use("/api/create_request_demo_ticket",create_request_demo_ticket);
 /*---prokemia_hub---*/
 
 app.get('/',(req,res)=>{
