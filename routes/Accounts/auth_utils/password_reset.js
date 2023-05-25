@@ -13,7 +13,7 @@ const router = express.Router();
 
 router.post('/',async(req,res)=>{
 	const payload = req.body; //gets payload
-	console.log(payload);
+	// console.log(payload);
 
 	if (!payload)
 		return res.status(400).send("Bad Request, no payload found")
@@ -26,7 +26,7 @@ router.post('/',async(req,res)=>{
 	const sales_result= await Sales.findOne({email_of_salesperson:email})
 
 
-	console.log(client_result,distributor_result,manufacturer_result,sales_result)
+	// console.log(client_result,distributor_result,manufacturer_result,sales_result)
 	//let user_result = null; // gets the user from non-null query
 	//console.log(client_result)
 	//sign a token and encrypt password

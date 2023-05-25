@@ -13,7 +13,7 @@ const router = express.Router();
 
 router.post('/',async(req,res)=>{
 	const payload = req.body; //gets payload
-	console.log(payload);
+	//console.log(payload);
 
 	if (!payload)
 		return res.status(400).send("Bad Request, no payload found")
@@ -75,7 +75,7 @@ router.post('/',async(req,res)=>{
 		} // true value indictates user credentials are correct
 		return res.status(401).send("wrong credentials, try again"); // false value indicates user credentials are wrong
 	}else if (sales_result !== null){
-		console.log(sales_result)
+		//console.log(sales_result)
 		const acc_type = 'sales'
 		if(bcrypt.compareSync(password,sales_result.password)){
 			const id = sales_result._id
