@@ -12,7 +12,7 @@ let origins = ['https://prokemia-client-web-musembi77.vercel.app',
 				'https://prokemia-client-web-git-master-musembi77.vercel.app',
 				'http://localhost:3000',
 				'https://prokemia-client-web.vercel.app',
-				'https://client-frontend-two.vercel.app/',
+				'https://client-frontend-two.vercel.app',
 				'https://prokemia.com'];
 app.use(cors({credentials:true, origin: origins}));
 //imports
