@@ -14,7 +14,7 @@ let origins = ['https://prokemia-client-web-musembi77.vercel.app',
 				'https://prokemia-client-web.vercel.app',
 				'https://client-frontend-two.vercel.app',
 	       			'https://www.prokemia.com/',
-	       'https://www.prokemia.com/',
+	       'https://www.prokemia.com',
 	       'https://prokemia.com/',
 				'https://prokemia.com'];
 app.use(cors({credentials:true, origin: origins}));
