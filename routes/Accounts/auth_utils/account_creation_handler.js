@@ -57,7 +57,7 @@ const Client_User=async(payload)=>{
 //creates a new distributor account
 const Distributor_User=async(payload)=>{
 	//check if payload is available
-    console.log(payload)
+    //console.log(payload)
     if(!payload){
         return  res.status(401).send('Bad Request'); 
     }
@@ -99,7 +99,7 @@ const Distributor_User=async(payload)=>{
             valid_email_status: false,
             suspension_status:  false,
 		})
-        console.log(new_Distributor)
+        //(new_Distributor)
         //on success email/sms the client to verify account
         return new_Distributor //return new user 
     }catch(err){
@@ -170,13 +170,6 @@ const Sales_User=async(payload)=>{
     const email = payload.email
 
     try{
-        const token = jwt.sign(
-            {email},
-            process.env.TOKEN_SALES_KEY,
-            {
-                expiresIn: '2d'
-            }
-        )
         //console.log(token)
         const new_SalesPerson = await Sales.create({
 			first_name:         payload.first_name,	
@@ -191,7 +184,7 @@ const Sales_User=async(payload)=>{
 			company_name:       "",
 			position:           "",	
 			password:           encrypted_password,	
-			access_token:       token,
+			access_token:       '',
             hub_access_status:  false,
 	        hub_account_id: 	"",
             account_status:     false,
@@ -201,11 +194,13 @@ const Sales_User=async(payload)=>{
             valid_email_status: false,
             suspension_status:  false,
 		})
+        return new_SalesPerson;
         
         //on success email/sms the client to verify account
-        return new_SalesPerson //return new user 
+        //return new_SalesPerson //return new user 
     }catch(err){
-        res.status(401).send('Could not create an account at the moment, try again')
+        console.log(err)
+        //res.status(401).send('Could not create an account at the moment, try again')
     }
 }
 
