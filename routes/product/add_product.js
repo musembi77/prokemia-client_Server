@@ -2,6 +2,7 @@
 const express = require("express");
 //models import
 const Product = require("../../models/Utils/Product.js");
+const Send_created_product_email = require('./send_created_product_email.js')
 
 const router = express.Router()
 
@@ -50,6 +51,12 @@ router.post("/",async(req,res)=>{
 				views:								0
 			})
 			console.timeEnd("new_Product")
+			console.log(new_Product)
+			const email_payload = {
+                email : payload.email_of_lister,
+                name_of_product: payload.name_of_product
+            }
+            Send_created_product_email(email_payload)
 			return res.status(200).send(new_Product)
 		}catch(err){
 			console.log(err)

@@ -16,23 +16,27 @@ router.post('/',async(req,res)=>{
     try{
         const product = await Product.findOne({_id:id});
         //console.log( product?.views);
-
-        const query = { _id:id};
-        if (product?.views == undefined){
-            const update = { $set: {
-                views: 1
-            }}
-            const response = await Product.updateOne( query, update).then((response)=>{
-                return res.status(200).send(product);
-            })
+        if (payload.acc_type == 'distributor' || payload.acc_type == 'manufacturer'){
+            return res.status(200).send(product);
         }else{
-            const update = { $set: {
-                views: product?.views + 1
-            }}
-            const response = await Product.updateOne( query, update).then((response)=>{
-                return res.status(200).send(product);
-            })
+            const query = { _id:id};
+            if (product?.views == undefined){
+                const update = { $set: {
+                    views: 1
+                }}
+                const response = await Product.updateOne( query, update).then((response)=>{
+                    return res.status(200).send(product);
+                })
+            }else{
+                const update = { $set: {
+                    views: product?.views + 1
+                }}
+                const response = await Product.updateOne( query, update).then((response)=>{
+                    return res.status(200).send(product);
+                })
+            }
         }
+
         
     }catch(err){
         //console.log(err);
