@@ -98,6 +98,7 @@ const Distributor_User=async(payload)=>{
             verification_status:    false,
             valid_email_status: false,
             suspension_status:  false,
+            views:                  0
 		})
         //(new_Distributor)
         //on success email/sms the client to verify account
@@ -149,6 +150,7 @@ const Manufacturer_User=async(payload)=>{
             verification_status:    false,
             valid_email_status: false,
             suspension_status:  false,
+            views:                  0
 		})
         
         //on success email/sms the client to verify account
