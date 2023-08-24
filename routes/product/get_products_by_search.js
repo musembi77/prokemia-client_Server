@@ -6,7 +6,7 @@ let router = express.Router()
 router.get('/',async(req,res)=>{
     const search_query = req.query?.query;
 
-    //console.log(search_query)
+    console.log(search_query)
     if(!search_query){
         return res.status(500).send("Error while fetching products,missing parameters")
     }
